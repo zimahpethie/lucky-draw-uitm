@@ -11,14 +11,22 @@
   width: 100%;
   margin: $title-margin-top 0 $title-margin-bottom 0;
   position: relative;
-  z-index: $z-index-title; // make sure title on top of sunburst
-  color: $color-title-border;
+  z-index: $z-index-title;
+  color: #f2a217;
   display: inline-block;
+  font-size: 5rem; 
+  font-weight: bold; 
+  font-family: 'Bebas Neue', cursive; 
+  letter-spacing: 2px; 
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5); 
+  text-transform: uppercase; 
+  -webkit-text-stroke: 0.001rem #fff;
 
   @each $media-query, $factor in $scale-factors {
     @media #{$media-query} {
       max-width: $title-width * $factor;
       margin: $title-margin-top 0 $title-margin-bottom * $factor 0;
+      font-size: 5rem * $factor; // Adjust font size for responsiveness
     }
   }
 
@@ -28,6 +36,9 @@
     display: block;
   }
 }
+
+
+
 
 .control-group {
   position: absolute;
